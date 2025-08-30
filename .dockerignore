@@ -9,8 +9,6 @@ frontend/node_modules/
 frontend/.next/
 frontend/.cache/
 
-# Ignore frontend dev files
-frontend/public/
 
 # Ignore build output (except final build)
 frontend/build/
