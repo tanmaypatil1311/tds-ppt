@@ -1,0 +1,28 @@
+# Ignore Python cache and build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore node_modules and frontend build cache
+frontend/node_modules/
+frontend/.next/
+frontend/.cache/
+
+# Ignore frontend dev files
+frontend/public/
+
+# Ignore build output (except final build)
+frontend/build/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and env files
+*.log
+.env
+.env.*
+
+# Ignore VSCode settings
+.vscode/

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node.js
+frontend/node_modules/
+frontend/.next/
+frontend/.cache/
+
+# Build output
+frontend/build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# VSCode
+.vscode/
+
+# Coverage
+coverage/
+*.cover
+
+# Misc
+*.swp
+*.swo
