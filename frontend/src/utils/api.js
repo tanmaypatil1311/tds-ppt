@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_BASE_URL = process.env.REACT_APP_API_URL || '';
 
 // Create axios instance with default config
 const api = axios.create({
@@ -41,7 +41,7 @@ export const generatePresentation = {
   // Analyze text and create slide structure
   analyzeText: async ({ text, guidance, provider, apiKey }) => {
     try {
-      const response = await api.post('/api/analyze-text', {
+  const response = await api.post('/api/pptx_analyzer', {
         text,
         guidance,
         provider,
@@ -61,7 +61,7 @@ export const generatePresentation = {
       formData.append('template', templateFile);
       formData.append('session_id', sessionId);
 
-      const response = await api.post('/api/analyze-template', formData, {
+  const response = await api.post('/api/pptx_analyzer', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -76,7 +76,7 @@ export const generatePresentation = {
   // Generate speaker notes
   generateSpeakerNotes: async ({ session_id, provider, apiKey }) => {
     try {
-      const response = await api.post('/api/generate-speaker-notes', {
+  const response = await api.post('/api/llm_service', {
         session_id,
         provider,
         apiKey
@@ -91,7 +91,7 @@ export const generatePresentation = {
   // Generate final presentation
   generatePresentation: async ({ session_id, options }) => {
     try {
-      const response = await api.post('/api/generate-presentation', {
+  const response = await api.post('/api/pptx_generator', {
         session_id,
         options
       }, {
@@ -109,7 +109,7 @@ export const generatePresentation = {
   // Health check
   healthCheck: async () => {
     try {
-      const response = await api.get('/api/health');
+  const response = await api.get('/api/llm_service');
       return response.data;
     } catch (error) {
       console.error('Health check failed:', error);
